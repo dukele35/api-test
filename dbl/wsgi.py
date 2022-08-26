@@ -1,5 +1,5 @@
 """
-WSGI config for etl project.
+WSGI config for dbl project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
