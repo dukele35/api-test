@@ -2,7 +2,7 @@ from django.urls import include, path
 from rest_framework import routers, permissions
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
-from dbl.app import views
+from dblapp import views
 from dbl import settings 
 from django.conf.urls.static import static
 
@@ -21,6 +21,8 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('', include(router.urls)),
+    path("factory-record/", views.FactoryRecordList.as_view()),
+    path("factory-record/<pk>", views.FactoryRecordDetail.as_view()),
     path(
         "api/",
         schema_view.with_ui("swagger", cache_timeout=0),
