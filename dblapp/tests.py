@@ -6,7 +6,7 @@ from pprint import pprint
 class FactoryRecordTestCase(TestCase):
     def setUp(self):
         self.factory = baker.make('FactoryRecord')
-        # pprint(self.factory.__dict__)
+        pprint(self.factory.__dict__)
 
     def test_model_str(self):
         factory = FactoryRecord.objects.create(factory_name="Org1")
