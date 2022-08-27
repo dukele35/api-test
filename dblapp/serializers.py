@@ -1,7 +1,11 @@
 from rest_framework import serializers
-from dblapp.models import ItemRecord, OrgRecord
+from dblapp.models import ItemRecord, OrgRecord, FactoryRecord
 
 
+class FactoryRecordSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FactoryRecord
+        fields = "__all__"
 class OrgRecordSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrgRecord
