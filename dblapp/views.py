@@ -1,21 +1,13 @@
-from django.contrib.auth.models import User
-from rest_framework import viewsets, permissions, generics
-from dblapp.serializers import UserSerializer
-from dblapp.models import FactoryRecord
-from dblapp.serializers import FactoryRecordSerializer
+from rest_framework import viewsets, permissions
+from dblapp.models import FactoryRecord, OrgRecord
+from dblapp.serializers import FactoryRecordSerializer, OrgRecordSerializer
 
-
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+class OrgRecordViewSet(viewsets.ModelViewSet):
+    queryset = OrgRecord.objects.all()
+    serializer_class = OrgRecordSerializer
     permission_classes = [permissions.AllowAny]
 
-class FactoryRecordList(generics.ListCreateAPIView):
-    permission_classes = [permissions.AllowAny]
-    queryset = FactoryRecord.objects.all()
-    serializer_class = FactoryRecordSerializer
-
-class FactoryRecordDetail(generics.RetrieveAPIView, generics.UpdateAPIView):
+class FactoryRecordViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.AllowAny]
     queryset = FactoryRecord.objects.all()
     serializer_class = FactoryRecordSerializer

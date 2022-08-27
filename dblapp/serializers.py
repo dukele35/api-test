@@ -1,12 +1,11 @@
-from dataclasses import field
-from django.contrib.auth.models import User
 from rest_framework import serializers
-from dblapp.models import FactoryRecord
+from dblapp.models import FactoryRecord, OrgRecord
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+
+class OrgRecordSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
-        fields = ['id', 'username', 'email']
+        model = OrgRecord
+        fields = "__all__"
 
 class FactoryRecordSerializer(serializers.ModelSerializer):
     class Meta:

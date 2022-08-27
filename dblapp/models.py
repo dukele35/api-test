@@ -1,7 +1,5 @@
-from operator import mod
-from django.db import models
 import random
-import uuid
+from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 def random_string_1():
@@ -10,6 +8,12 @@ def random_string_1():
 def random_string_2():
     return str(random.randint(1000, 9999))
 
+class OrgRecord(models.Model):
+    org_id = models.CharField(max_length=4,primary_key = True, unique=True, default = random_string_2, editable = False)
+    org_name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.org_id
 
 class FactoryRecord(models.Model):
     COUNTRY_CHOICES = [
@@ -20,7 +24,7 @@ class FactoryRecord(models.Model):
         ("TH", "Thailand"),
     ]
     factory_id = models.CharField(max_length=5,primary_key = True, unique=True, default = random_string_1, editable = False)
-    org_id = models.CharField(max_length=4, default = random_string_2)
+    org_id = models.ForeignKey(OrgRecord,on_delete=models.CASCADE)
     country = models.CharField(max_length=10,choices=COUNTRY_CHOICES,default="VN", blank=True)
     execution_date = models.DateField(null=True, blank=True)
     fail_rate = models.FloatField(null=True, blank=True, validators=[MinValueValidator(0.0), MaxValueValidator(1.0)])
