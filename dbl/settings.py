@@ -40,7 +40,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     "drf_yasg",
-    "dblapp"
+    "dblapp",
+    'django_nose',
+]
+
+# Use nose to run all tests
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+# Tell nose to measure coverage on the 'dblapp' apps
+NOSE_ARGS = [
+    '--with-coverage',
+    '--cover-package=dblapp',
 ]
 
 MIDDLEWARE = [
