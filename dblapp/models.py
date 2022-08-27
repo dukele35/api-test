@@ -15,7 +15,7 @@ class OrgRecord(models.Model):
     def __str__(self):
         return self.org_id
 
-class FactoryRecord(models.Model):
+class ItemRecord(models.Model):
     COUNTRY_CHOICES = [
         ("VN", "Vietnam"),
         ("MY", "Malaysia"),
