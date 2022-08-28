@@ -15,4 +15,9 @@ docker-compose build && docker-compose up -d
 #### 3.1. REST API
 - http://localhost/ shows the default Django REST's API Root page which includes http://localhost/item/, http://localhost/org/ & http://localhost/factory/
 - http://localhost/api/ reveals the Swagger API doc instructing us how to perform `GET`, `POST`, `PUT`, `PATCH` & `DELETE` requests on different data models, i.e. `item`, `org` & `factory`.
+- All endpoints are publicly available since there is no authentication method applied. Thus, using `curl` could be simply done
 #### 3.2. Data Models
+- There are three models as follows
+<p align="center">
+  <img width="360" height="200" src="https://github.com/dukele35/inspectorio-test/blob/master/illustrations/data-model.jpg">
+</p>
