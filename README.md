@@ -19,5 +19,5 @@ docker-compose build && docker-compose up -d
 #### 3.2. Data Models
 - There are three models as follows
 <p align="center">
-  <img width="360" height="200" src="https://github.com/dukele35/inspectorio-test/blob/master/illustrations/data-model.jpg">
+  <img height="300" src="https://github.com/dukele35/inspectorio-test/blob/master/images/data-model.jpg">
 </p>
