@@ -50,7 +50,15 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="ItemRecord",
             fields=[
-                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
                 (
                     "country",
                     models.CharField(
@@ -91,9 +99,18 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "factory_id",
-                    models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to="dblapp.factoryrecord"),
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="dblapp.factoryrecord",
+                    ),
                 ),
-                ("org_id", models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to="dblapp.orgrecord")),
+                (
+                    "org_id",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="dblapp.orgrecord",
+                    ),
+                ),
             ],
         ),
     ]

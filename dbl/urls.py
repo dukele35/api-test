@@ -7,7 +7,11 @@ from django.conf.urls.static import static
 
 
 schema_view = get_schema_view(
-    openapi.Info(title="Inspectorio Test", default_version="v1", description="Test description"),
+    openapi.Info(
+        title="Inspectorio Test",
+        default_version="v1",
+        description="Test description",
+    ),
     public=True,
     permission_classes=[permissions.AllowAny],
 )
@@ -27,4 +31,6 @@ urlpatterns = [
 ]
 
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(
+        settings.STATIC_URL, document_root=settings.STATIC_ROOT
+    )
