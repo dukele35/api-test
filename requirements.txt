@@ -1,6 +1,6 @@
+coverage==6.3.2
 Django==3.2.15
 djangorestframework==3.12.4
 drf-yasg
-psycopg2==2.8.5
-coverage==6.3.2
 model-bakery==1.7.0
+psycopg2==2.8.5

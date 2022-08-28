@@ -3,9 +3,10 @@ from model_bakery import baker
 from dblapp.models import FactoryRecord, OrgRecord
 from pprint import pprint
 
+
 class FactoryRecordTestCase(TestCase):
     def setUp(self):
-        self.factory = baker.make('FactoryRecord')
+        self.factory = baker.make("FactoryRecord")
         pprint(self.factory.__dict__)
 
     def test_model_str(self):
@@ -15,7 +16,7 @@ class FactoryRecordTestCase(TestCase):
 
 class OrgRecordTestCase(TestCase):
     def setUp(self):
-        self.org = baker.make('OrgRecord')
+        self.org = baker.make("OrgRecord")
         pprint(self.org.__dict__)
 
     def test_model_str(self):
