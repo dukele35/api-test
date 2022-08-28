@@ -18,6 +18,7 @@ docker-compose build && docker-compose up -d
 - All endpoints are publicly available since there is no authentication method applied. Thus, using `curl` could be simply done
 #### 3.2. Data Models
 - There are three models as follows
+![alt text](https://github.com/dukele35/inspectorio-test/blob/main/images/data-model.jpg)
 <p align="center">
-  <img height="300" src="https://github.com/dukele35/inspectorio-test/tree/main/images/data-model.jpg">
+  <img height="300" src="https://github.com/dukele35/inspectorio-test/blob/main/images/data-model.jpg">
 </p>
